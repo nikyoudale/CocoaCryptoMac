@@ -97,11 +97,34 @@ C0+41I3wWnD2om68/HjaE3sfZHlp1nfsapJ2Y2X1954LJ1PxOoUvCb0CAwEAAQ==
 ```
 
 Encrypting with public key on the command line:
-% echo "hello world" | openssl rsautl -inkey public_key.pem -pubin -pkcs -encrypt | base64
+```
+% echo "hello world" \
+  | openssl rsautl -inkey public_key.pem -pubin -pkcs -encrypt \
+  | base64
 IXy6nfUM2Pjq75ZJ+yxxCEhiJ6UH75xX5dGdPhwkJJBNarN5euEqSNEFDPJ6+AmRuX2smUYCL7TLwqu20RK3QQ==
+```
 
 Decrypting with private key on the command line:
-echo "IXy6nfUM2Pjq75ZJ+yxxCEhiJ6UH75xX5dGdPhwkJJBNarN5euEqSNEFDPJ6+AmRuX2smUYCL7TLwqu20RK3QQ==" | base64 -D | openssl rsautl -inkey private_key.pem -pkcs -decrypt
+```
+echo "IXy6nfUM2Pjq75ZJ+yxxCEhiJ6UH75xX5dGdPhwkJJBNarN5euEqSNEFDPJ6+AmRuX2smUYCL7TLwqu20RK3QQ==" \
+  | base64 -D \
+  | openssl rsautl -inkey private_key.pem -pkcs -decrypt
+```
+
+Encrypting with private key on the command line:
+```
+% echo "hello world" \
+  | openssl rsautl -sign -inkey private_key.pem \
+  | base64
+G1ihO3NRBiA4nygDsDSYLWEpKo5I08/fnCo4Xoj5lrJl5A/WhFrGsmYyNlXLqve8k5CsBjToPb2q03sVZSii9g==
+```
+
+Decrypting with public key on the command line:
+```
+% echo "G1ihO3NRBiA4nygDsDSYLWEpKo5I08/fnCo4Xoj5lrJl5A/WhFrGsmYyNlXLqve8k5CsBjToPb2q03sVZSii9g==" \
+  | base64 -D \
+  | openssl rsautl -verify -inkey public_key.pem -pubin
+```
 
 
 That's great, but how do we decrypt that in Mac app *without* OpenSSL?
@@ -136,4 +159,13 @@ Essentially, what this means is that if your public key has the `-----BEGIN PUBL
 
 This logic is all encapsulated in `CCMKeyLoader`, you just need to know what format your key is in. Then call `loadRSAPEMPublicKey:` or `loadX509PEMPublicKey:`.
 
+###Step 2: Decrypt
+It would be nice to be able to use `SecDecryptTransform`, however that doesn't seem to accept public keys for decryption. Apple's docs say that when you can't do something with the higher level Security framework functions, then fallback to the deprecated CSSM functions. The implementation is pretty complicated and gnarly, but it works. See `CSSMPublicKeyDecryptor`.
+
+```
+NSData *decryptedData = [decryptor decryptData:inputData
+                                 withPublicKey:key
+                                         error:&error];
+NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+```
 

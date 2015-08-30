@@ -4,12 +4,17 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMBase64.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMBase64.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMCryptor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMCryptor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMKeyLoader.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMKeyLoader.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey_internal.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/CCMCryptorTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/CCMKeyLoaderTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/resources/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/resources/private_key.pem" isTestSource="false" />

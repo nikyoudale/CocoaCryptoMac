@@ -18,6 +18,11 @@
 		249F51051B92ACC700B0CA61 /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51021B92ACC700B0CA61 /* private_key.pem */; };
 		249F51061B92ACC700B0CA61 /* public_key.rsa.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51031B92ACC700B0CA61 /* public_key.rsa.pem */; };
 		249F51071B92ACC700B0CA61 /* public_key.x509.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51041B92ACC700B0CA61 /* public_key.x509.pem */; };
+		249F510B1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F510A1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m */; };
+		249F510C1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F510A1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m */; };
+		249F510F1B92C3BE00B0CA61 /* CCMCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F510E1B92C3BE00B0CA61 /* CCMCryptor.m */; };
+		249F51101B92C3BE00B0CA61 /* CCMCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F510E1B92C3BE00B0CA61 /* CCMCryptor.m */; };
+		249F51121B92C3D500B0CA61 /* CCMCryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F51111B92C3D500B0CA61 /* CCMCryptorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +53,11 @@
 		249F51021B92ACC700B0CA61 /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
 		249F51031B92ACC700B0CA61 /* public_key.rsa.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key.rsa.pem; sourceTree = "<group>"; };
 		249F51041B92ACC700B0CA61 /* public_key.x509.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key.x509.pem; sourceTree = "<group>"; };
+		249F51091B92B88000B0CA61 /* CSSMPublicKeyDecryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMPublicKeyDecryptor.h; sourceTree = "<group>"; };
+		249F510A1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMPublicKeyDecryptor.m; sourceTree = "<group>"; };
+		249F510D1B92C3BE00B0CA61 /* CCMCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMCryptor.h; sourceTree = "<group>"; };
+		249F510E1B92C3BE00B0CA61 /* CCMCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMCryptor.m; sourceTree = "<group>"; };
+		249F51111B92C3D500B0CA61 /* CCMCryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMCryptorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,10 @@
 				249F50E91B92A54E00B0CA61 /* CCMKeyLoader.m */,
 				249F50EB1B92A68000B0CA61 /* CCMBase64.h */,
 				249F50EC1B92A68000B0CA61 /* CCMBase64.m */,
+				249F510D1B92C3BE00B0CA61 /* CCMCryptor.h */,
+				249F510E1B92C3BE00B0CA61 /* CCMCryptor.m */,
+				249F51091B92B88000B0CA61 /* CSSMPublicKeyDecryptor.h */,
+				249F510A1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m */,
 			);
 			path = CocoaCryptoMac;
 			sourceTree = "<group>";
@@ -104,8 +118,9 @@
 		249F50EE1B92AB7500B0CA61 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				249F50FC1B92ABBD00B0CA61 /* resources */,
 				249F50FD1B92AC0100B0CA61 /* CCMKeyLoaderTests.m */,
+				249F51111B92C3D500B0CA61 /* CCMCryptorTests.m */,
+				249F50FC1B92ABBD00B0CA61 /* resources */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -211,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249F510B1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m in Sources */,
 				249F50E61B92A52F00B0CA61 /* CCMPublicKey.m in Sources */,
 				249F50EA1B92A54E00B0CA61 /* CCMKeyLoader.m in Sources */,
 				249F50ED1B92A68000B0CA61 /* CCMBase64.m in Sources */,
+				249F510F1B92C3BE00B0CA61 /* CCMCryptor.m in Sources */,
 				249F50DE1B928E1100B0CA61 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249F510C1B92B88000B0CA61 /* CSSMPublicKeyDecryptor.m in Sources */,
+				249F51121B92C3D500B0CA61 /* CCMCryptorTests.m in Sources */,
 				249F51001B92AC2800B0CA61 /* CCMKeyLoader.m in Sources */,
 				249F50FE1B92AC0100B0CA61 /* CCMKeyLoaderTests.m in Sources */,
 				249F51011B92AC2800B0CA61 /* CCMBase64.m in Sources */,
+				249F51101B92C3BE00B0CA61 /* CCMCryptor.m in Sources */,
 				249F50FF1B92AC2800B0CA61 /* CCMPublicKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
