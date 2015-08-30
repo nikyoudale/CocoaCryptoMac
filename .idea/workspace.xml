@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427a3621-7711-4d3e-9838-8a1a9f0389d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey_internal.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CCMCryptorTests.m" afterPath="$PROJECT_DIR$/test/CCMCryptorTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" afterPath="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CocoaCryptoMac.iml" afterPath="$PROJECT_DIR$/.idea/CocoaCryptoMac.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/CocoaCryptoMac.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CocoaCryptoMac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="101" />
+              <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -50,8 +38,8 @@
       <file leaf-file-name="CCMCryptor.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7162346">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.6780355">
+              <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -83,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -124,11 +112,11 @@
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" />
         <option value="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" />
-        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" />
-        <option value="$PROJECT_DIR$/test/CCMCryptorTests.m" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
+        <option value="$PROJECT_DIR$/test/CCMCryptorTests.m" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" />
       </list>
     </option>
@@ -399,14 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -414,14 +394,6 @@
           <folding>
             <element signature="e#149#175#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -433,10 +405,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFError.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7162346">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.6780355">
+          <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
           <folding />
         </state>
       </provider>

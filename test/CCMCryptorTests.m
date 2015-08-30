@@ -26,7 +26,7 @@
   cryptor = [[CCMCryptor alloc] init];
 }
 
-- (void)testDecryptHelloWorld {
+- (void)testDecryptWithPublicKey {
   // This was produced on the command line with the following command:
   // % echo -n "hello world" \
   //   | openssl rsautl -sign -inkey test/resources/private_key.pem \
@@ -43,7 +43,7 @@
   XCTAssertEqualObjects(@"hello world", output);
 }
 
-- (void)testEncryptHelloWorld {
+- (void)testEncryptWithPrivateKey {
   NSData *inputData = [@"hello world" dataUsingEncoding:NSUTF8StringEncoding];
   CCMPrivateKey *key = [self loadPrivateKeyResource:@"private_key"];
   NSError *error;
@@ -59,6 +59,24 @@
   XCTAssertEqualObjects(expected, output);
 }
 
+- (void)testEncryptWithPublicKeyThenDecryptWithPrivateKey {
+  NSData *inputData = [@"hello world" dataUsingEncoding:NSUTF8StringEncoding];
+  CCMPublicKey *publicKey = [self loadPublicKeyResource:@"public_key.x509"];
+  CCMPrivateKey *privateKey = [self loadPrivateKeyResource:@"private_key"];
+  NSError *error;
+  // This can be decrypted on the command line with the following command:
+  // % echo -n "<output>" \
+  //   | base64 -D \
+  //   | openssl rsautl -decrypt -inkey test/resources/private_key.pem
+  NSData *encryptedData = [cryptor encryptData:inputData withPublicKey:publicKey error:&error];
+  NSData *decryptedData = [cryptor decryptData:encryptedData
+                                withPrivateKey:privateKey
+                                         error:&error];
+  NSString *output = [[NSString alloc] initWithData:decryptedData
+                                           encoding:NSUTF8StringEncoding];
+  XCTAssertEqualObjects(@"hello world", output);
+}
+
 - (CCMPublicKey *)loadPublicKeyResource:(NSString *)name {
   NSString *pem = [self loadPEMResource:name];
   CCMKeyLoader *keyLoader = [[CCMKeyLoader alloc] init];
@@ -71,7 +89,7 @@
   return [keyLoader loadRSAPEMPrivateKey:pem];
 }
 
-- (NSString *)loadPEMResource:(const NSString *)name {
+- (NSString *)loadPEMResource:(NSString *)name {
   NSBundle *bundle = [NSBundle bundleForClass:[CCMCryptorTests class]];
   NSURL *url = [bundle URLForResource:name withExtension:@"pem"];
   NSAssert(url != nil, @"file not found");

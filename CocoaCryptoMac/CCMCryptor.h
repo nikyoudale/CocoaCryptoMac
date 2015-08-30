@@ -13,7 +13,10 @@
 
 @interface CCMCryptor : NSObject
 
-- (NSData *)decryptData:(NSData *)encryptedData withPublicKey:(CCMPublicKey *)key error:(NSError **)errorPtr;
 - (NSData *)encryptData:(NSData *)data withPrivateKey:(CCMPrivateKey *)key error:(NSError **)errorPtr;
+- (NSData *)decryptData:(NSData *)encryptedData withPublicKey:(CCMPublicKey *)key error:(NSError **)errorPtr;
+
+- (NSData *)encryptData:(NSData *)data withPublicKey:(CCMPublicKey *)key error:(NSError **)errorPtr;
+- (NSData *)decryptData:(NSData *)encryptedData withPrivateKey:(CCMPrivateKey *)key error:(NSError **)errorPtr;
 
 @end
