@@ -169,3 +169,5 @@ NSData *decryptedData = [cryptor decryptData:inputData
 NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
 ```
 
+So there you go. Pretty messy, but possible.
+
