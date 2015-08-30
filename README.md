@@ -3,10 +3,28 @@
 This is a simple project demonstrating how to migrate from certain OpenSSL APIs to Apple's native crypto libraries. I found documentation on this topic to sparse and generally not very helpful. Hopefully this will be useful to someone.
 
 ##Problem
-I had some serial key generation and verification code which depends on OpenSSL for asymmetric encryption and decryption. The idea is pretty simple: serial key generation is done by encrypting some data with an RSA private key, and verification consists of decrypting that data with the matching RSA public key. This process is also known as signing and verifying, and there are a bunch of standardised algorithms for doing that, however in this case it's custom - an arbitrary piece of data is encrypted.
+I had some existing code using the OpenSSL library, which was available on Mac OS X until 10.7 when it marked as deprecated. Since then, until 10.11, the OpenSSL library has still existed on the system, so you could still compile with warnings. From 10.11 onwards, the OpenSSL headers have been removed making compilation not possible, however the dynamic library still seems to be included with OS, so existing apps linked to it will still work, for a while.
 
-Let's get concrete:
+The code is something like this:
+```
+char *publicKeyPEM = "-----BEGIN RSA PUBLIC KEY-----\n\
+MEgCQQCWz+w+xADL55+XhJHzptMgHnSJkh6hfAtPuNSN8Fpw9qJuvPx42hN7H2R5\n\
+adZ37GqSdmNl9feeCydT8TqFLwm9AgMBAAE=\n\
+-----END RSA PUBLIC KEY-----";
 
+BIO *pubBio = BIO_new_mem_buf((void *)publicKeyPEM, (int)strlen(publicKeyPEM)+1);
+RSA pubRSA = RSA_new();
+PEM_read_bio_RSAPublicKey(pubBio, &pubRSA, NULL, NULL);
+int len;
+uint8_t *buf = malloc(RSA_size(pubRSA));
+unsigned char *encrypted = ...;
+RSA_public_decrypt(len, encrypted, buf, pub, RSA_PKCS1_PADDING);
+```
+
+Nevermind why it does something so non-standard ('encrypting' with the private key doesn't really 'encrypt' it because anyone with the public key can 'decrypt'). This is basically how signatures work with RSA keys.
+
+
+##The keys
 I had a private key that looks like this:
 
 private_key.pem:
@@ -60,6 +78,7 @@ C0+41I3wWnD2om68/HjaE3sfZHlp1nfsapJ2Y2X1954LJ1PxOoUvCb0CAwEAAQ==
 ```
 
 X.509 -> RSA:
+```
 % openssl rsa -pubin -in public_key.x509.pem -RSAPublicKey_out
 writing RSA key
 -----BEGIN RSA PUBLIC KEY-----
@@ -96,6 +115,8 @@ C0+41I3wWnD2om68/HjaE3sfZHlp1nfsapJ2Y2X1954LJ1PxOoUvCb0CAwEAAQ==
 -----END PUBLIC KEY-----
 ```
 
+##OpenSSL command line
+###EncPub, DecPriv (a.k.a. encrypt, decrypt)
 Encrypting with public key on the command line:
 ```
 % echo "hello world" \
@@ -111,6 +132,7 @@ echo "IXy6nfUM2Pjq75ZJ+yxxCEhiJ6UH75xX5dGdPhwkJJBNarN5euEqSNEFDPJ6+AmRuX2smUYCL7
   | openssl rsautl -inkey private_key.pem -pkcs -decrypt
 ```
 
+###EncPriv, DecPub (a.k.a. sign, verify)
 Encrypting with private key on the command line:
 ```
 % echo "hello world" \
@@ -126,8 +148,7 @@ Decrypting with public key on the command line:
   | openssl rsautl -verify -inkey public_key.pem -pubin
 ```
 
-
-That's great, but how do we decrypt that in Mac app *without* OpenSSL?
+It is this latter pair of operations that we want to replicate in a Mac app *without* OpenSSL.
 
 ##Doing it in with Apple's APIs
 ###Step 1: Load the key
@@ -160,7 +181,7 @@ Essentially, what this means is that if your public key has the `-----BEGIN PUBL
 This logic is all encapsulated in `CCMKeyLoader`, you just need to know what format your key is in. Then call `loadRSAPEMPublicKey:` or `loadX509PEMPublicKey:`.
 
 ###Step 2: Decrypt
-It would be nice to be able to use `SecDecryptTransform`, however that doesn't seem to accept public keys for decryption. Apple's docs say that when you can't do something with the higher level Security framework functions, then fallback to the deprecated CSSM functions. The implementation is pretty complicated and gnarly, but it works. See `CSSMRSACryptor`.
+It would be nice to be able to use `SecDecryptTransform`, however that doesn't seem to accept public keys for decryption. Apple's docs say that when you can't do something with the higher level Security framework functions, then fallback to the deprecated CSSM functions. The implementation is insanely complicated and generally vile, but it works. See `CSSMRSACryptor`.
 
 ```
 NSData *decryptedData = [cryptor decryptData:inputData
@@ -170,4 +191,3 @@ NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8S
 ```
 
 So there you go. Pretty messy, but possible.
-
