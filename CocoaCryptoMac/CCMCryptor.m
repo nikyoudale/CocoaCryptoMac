@@ -8,24 +8,31 @@
 
 #import "CCMCryptor.h"
 #import "CCMPublicKey.h"
-#import "CSSMPublicKeyDecryptor.h"
+#import "CSSMRSACryptor.h"
+#import "CCMPrivateKey.h"
 
 @implementation CCMCryptor {
-  CSSMPublicKeyDecryptor *_cssmDecryptor;
+  CSSMRSACryptor *_cssmCryptor;
 }
 
 - (instancetype)init {
   self = [super init];
   if (self) {
-    _cssmDecryptor = [[CSSMPublicKeyDecryptor alloc] init];
+    _cssmCryptor = [[CSSMRSACryptor alloc] init];
   }
   return self;
 }
 
 - (NSData *)decryptData:(NSData *)encryptedData withPublicKey:(CCMPublicKey *)key error:(NSError **)errorPtr {
-  return [_cssmDecryptor decryptData:encryptedData
-                       withPublicKey:key
-                               error:errorPtr];
+  return [_cssmCryptor decryptData:encryptedData
+                     withPublicKey:key
+                             error:errorPtr];
+}
+
+- (NSData *)encryptData:(NSData *)data withPrivateKey:(CCMPrivateKey *)key error:(NSError **)errorPtr {
+  return [_cssmCryptor encryptData:data
+                    withPrivateKey:key
+                             error:errorPtr];
 }
 
 @end

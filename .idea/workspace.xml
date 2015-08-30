@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427a3621-7711-4d3e-9838-8a1a9f0389d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/CCMCryptorTests.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey_internal.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CCMCryptorTests.m" afterPath="$PROJECT_DIR$/test/CCMCryptorTests.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" afterPath="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" afterPath="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CocoaCryptoMac.iml" afterPath="$PROJECT_DIR$/.idea/CocoaCryptoMac.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CocoaCryptoMac.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/CocoaCryptoMac.xcodeproj/project.pbxproj" />
@@ -31,54 +37,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CCMCryptor.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CCMCryptor.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7162346">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSSMRSACryptor.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSSMRSACryptor.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding>
+                <element signature="e#149#175#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CCMCryptorTests.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CCMPublicKey.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.h">
+      <file leaf-file-name="CCMKeyLoader.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CCMPublicKey.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.m">
+      <file leaf-file-name="CCMKeyLoaderTests.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/CCMKeyLoaderTests.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCMPublicKey_internal.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey_internal.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSSMPublicKeyDecryptor.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27054107">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-              <folding>
-                <element signature="e#157#191#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,15 +117,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" />
-        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" />
-        <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMDecryptor.m" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMDecryptor.h" />
-        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
         <option value="$PROJECT_DIR$/test/CCMDecryptorTests.m" />
-        <option value="$PROJECT_DIR$/test/CCMCryptorTests.m" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.m" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m" />
+        <option value="$PROJECT_DIR$/test/CCMKeyLoaderTests.m" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h" />
         <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" />
+        <option value="$PROJECT_DIR$/test/CCMCryptorTests.m" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h" />
+        <option value="$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m" />
       </list>
     </option>
   </component>
@@ -244,22 +274,22 @@
     <frame x="4" y="23" width="1436" height="873" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19655667" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20301291" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -273,72 +303,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CCMKeyLoaderTests.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#145#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="109" selection-start-line="14" selection-start-column="109" selection-end-line="14" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey_internal.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -351,14 +315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -379,21 +335,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Security.framework/Headers/cssmtype.h">
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m">
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27054107">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPublicKey.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMPrivateKey.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMKeyLoader.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CCMKeyLoaderTests.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Security.framework/Headers/cssmtype.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="957" column="4" selection-start-line="957" selection-start-column="4" selection-end-line="957" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
-            <element signature="e#157#191#0" expanded="true" />
+            <element signature="e#149#175#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CCMCryptorTests.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CSSMRSACryptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CocoaCryptoMac/CCMCryptor.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7162346">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

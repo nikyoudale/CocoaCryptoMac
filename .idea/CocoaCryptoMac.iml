@@ -8,11 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMCryptor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMKeyLoader.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMKeyLoader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPrivateKey.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPrivateKey.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPrivateKey_internal.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CCMPublicKey_internal.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMPublicKeyDecryptor.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMRSACryptor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CocoaCryptoMac/CSSMRSACryptor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/CCMCryptorTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/CCMKeyLoaderTests.m" isTestSource="false" />

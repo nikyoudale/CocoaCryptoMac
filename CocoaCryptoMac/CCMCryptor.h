@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class CCMPublicKey;
+@class CCMPrivateKey;
 
 @interface CCMCryptor : NSObject
 
 - (NSData *)decryptData:(NSData *)encryptedData withPublicKey:(CCMPublicKey *)key error:(NSError **)errorPtr;
+- (NSData *)encryptData:(NSData *)data withPrivateKey:(CCMPrivateKey *)key error:(NSError **)errorPtr;
 
 @end

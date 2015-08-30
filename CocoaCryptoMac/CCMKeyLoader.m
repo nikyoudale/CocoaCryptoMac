@@ -9,6 +9,7 @@
 #import "CCMKeyLoader.h"
 #import "CCMBase64.h"
 #import "CCMPublicKey_internal.h"
+#import "CCMPrivateKey_internal.h"
 
 
 @implementation CCMKeyLoader {
@@ -19,10 +20,10 @@
 - (instancetype)init {
   self = [super init];
   if (self) {
-    _headerRegex = [NSRegularExpression regularExpressionWithPattern:@"-----BEGIN (RSA )?PUBLIC KEY-----"
+    _headerRegex = [NSRegularExpression regularExpressionWithPattern:@"-----BEGIN (RSA )?(PUBLIC|PRIVATE) KEY-----"
                                                              options:0
                                                                error:nil];
-    _footerRegex = [NSRegularExpression regularExpressionWithPattern:@"-----END (RSA )?PUBLIC KEY-----"
+    _footerRegex = [NSRegularExpression regularExpressionWithPattern:@"-----END (RSA )?(PUBLIC|PRIVATE) KEY-----"
                                                              options:0
                                                                error:nil];
   }
@@ -63,9 +64,52 @@
                     externalFormat:kSecFormatOpenSSL];
 }
 
+- (CCMPrivateKey *)loadRSAPEMPrivateKey:(NSString *)pemKey {
+  if (![self verifyHeader:@"-----BEGIN RSA PRIVATE KEY-----"
+                   footer:@"-----END RSA PRIVATE KEY-----"
+                    inKey:pemKey]) {
+    return nil;
+  }
+  NSData *keyData = [self extractKeyData:pemKey];
+  if (keyData == nil) {
+    return nil;
+  }
+  // As mentioned in the source for SecImportExportUtils.cpp:
+  // kSecFormatOpenSSL expected formats for RSA: (public = X509, private = PKCS1)
+  // Source: http://www.opensource.apple.com/source/libsecurity_keychain/libsecurity_keychain-24850/lib/SecImportExportUtils.cpp?txt
+  return [self importPrivateKeyData:keyData
+                    externalFormat:kSecFormatOpenSSL];
+}
+
+- (CCMPrivateKey *)importPrivateKeyData:(NSData *)keyData externalFormat:(SecExternalFormat)externalFormat {
+  SecKeyRef keyRef = [self createSecKeyWithData:keyData
+                                 externalFormat:externalFormat
+                               externalItemType:kSecItemTypePrivateKey];
+  if (keyRef == NULL) {
+    return nil;
+  }
+  CCMPrivateKey *wrappedKey = [[CCMPrivateKey alloc] initWithSecKeyRef:keyRef];
+  CFRelease(keyRef);
+  return wrappedKey;
+}
+
 - (CCMPublicKey *)importPublicKeyData:(NSData *)keyData externalFormat:(SecExternalFormat)externalFormat {
+  SecKeyRef keyRef = [self createSecKeyWithData:keyData
+                       externalFormat:externalFormat
+                     externalItemType:kSecItemTypePublicKey];
+  if (keyRef == NULL) {
+    return nil;
+  }
+  CCMPublicKey *wrappedKey = [[CCMPublicKey alloc] initWithSecKeyRef:keyRef];
+  CFRelease(keyRef);
+  return wrappedKey;
+}
+
+- (SecKeyRef)createSecKeyWithData:(NSData *)keyData
+                   externalFormat:(SecExternalFormat)externalFormat
+                 externalItemType:(SecExternalItemType)externalItemType {
   SecExternalFormat format = externalFormat;
-  SecExternalItemType itemType = kSecItemTypePublicKey;
+  SecExternalItemType itemType = externalItemType;
   CFArrayRef keys = NULL;
   OSStatus status = SecItemImport((__bridge CFDataRef)keyData, NULL, &format, &itemType, 0, NULL, NULL, &keys);
   if (status != 0) {
@@ -74,10 +118,9 @@
   if (keys == NULL || CFArrayGetCount(keys) != 1) {
     return nil;
   }
-  SecKeyRef keyRef = (SecKeyRef)CFArrayGetValueAtIndex(keys, 0);
-  CCMPublicKey *wrappedKey = [[CCMPublicKey alloc] initWithSecKeyRef:keyRef];
+  SecKeyRef keyRef = (SecKeyRef)CFRetain(CFArrayGetValueAtIndex(keys, 0));
   CFRelease(keys);
-  return wrappedKey;
+  return keyRef;
 }
 
 - (BOOL)verifyHeader:(NSString *)header footer:(NSString *)footer inKey:(NSString *)pemKey {

@@ -17,12 +17,14 @@
 @implementation CCMKeyLoaderTests {
   NSString *publicRSAPEM;
   NSString *publicX509PEM;
+  NSString *privateRSAPEM;
 }
 
 - (void)setUp {
   [super setUp];
   publicRSAPEM = [self loadPEMKeyResource:@"public_key.rsa"];
   publicX509PEM = [self loadPEMKeyResource:@"public_key.x509"];
+  privateRSAPEM = [self loadPEMKeyResource:@"private_key"];
 }
 
 - (void)testLoadRSAPublicKey {
@@ -47,6 +49,12 @@
   CCMKeyLoader *loader = [[CCMKeyLoader alloc] init];
   CCMPublicKey *key = [loader loadRSAPEMPublicKey:publicX509PEM];
   XCTAssertNil(key);
+}
+
+- (void)testLoadRSAPrivateKey {
+  CCMKeyLoader *loader = [[CCMKeyLoader alloc] init];
+  CCMPrivateKey *key = [loader loadRSAPEMPrivateKey:privateRSAPEM];
+  XCTAssertNotNil(key);
 }
 
 - (NSString *)loadPEMKeyResource:(NSString *)name {

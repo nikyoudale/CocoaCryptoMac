@@ -160,10 +160,10 @@ Essentially, what this means is that if your public key has the `-----BEGIN PUBL
 This logic is all encapsulated in `CCMKeyLoader`, you just need to know what format your key is in. Then call `loadRSAPEMPublicKey:` or `loadX509PEMPublicKey:`.
 
 ###Step 2: Decrypt
-It would be nice to be able to use `SecDecryptTransform`, however that doesn't seem to accept public keys for decryption. Apple's docs say that when you can't do something with the higher level Security framework functions, then fallback to the deprecated CSSM functions. The implementation is pretty complicated and gnarly, but it works. See `CSSMPublicKeyDecryptor`.
+It would be nice to be able to use `SecDecryptTransform`, however that doesn't seem to accept public keys for decryption. Apple's docs say that when you can't do something with the higher level Security framework functions, then fallback to the deprecated CSSM functions. The implementation is pretty complicated and gnarly, but it works. See `CSSMRSACryptor`.
 
 ```
-NSData *decryptedData = [decryptor decryptData:inputData
+NSData *decryptedData = [cryptor decryptData:inputData
                                  withPublicKey:key
                                          error:&error];
 NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
