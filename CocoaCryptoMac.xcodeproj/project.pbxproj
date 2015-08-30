@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		249F50DE1B928E1100B0CA61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50DD1B928E1100B0CA61 /* main.m */; };
+		249F50E61B92A52F00B0CA61 /* CCMPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50E51B92A52F00B0CA61 /* CCMPublicKey.m */; };
+		249F50EA1B92A54E00B0CA61 /* CCMKeyLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50E91B92A54E00B0CA61 /* CCMKeyLoader.m */; };
+		249F50ED1B92A68000B0CA61 /* CCMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50EC1B92A68000B0CA61 /* CCMBase64.m */; };
+		249F50FE1B92AC0100B0CA61 /* CCMKeyLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50FD1B92AC0100B0CA61 /* CCMKeyLoaderTests.m */; };
+		249F50FF1B92AC2800B0CA61 /* CCMPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50E51B92A52F00B0CA61 /* CCMPublicKey.m */; };
+		249F51001B92AC2800B0CA61 /* CCMKeyLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50E91B92A54E00B0CA61 /* CCMKeyLoader.m */; };
+		249F51011B92AC2800B0CA61 /* CCMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F50EC1B92A68000B0CA61 /* CCMBase64.m */; };
+		249F51051B92ACC700B0CA61 /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51021B92ACC700B0CA61 /* private_key.pem */; };
+		249F51061B92ACC700B0CA61 /* public_key.rsa.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51031B92ACC700B0CA61 /* public_key.rsa.pem */; };
+		249F51071B92ACC700B0CA61 /* public_key.x509.pem in Resources */ = {isa = PBXBuildFile; fileRef = 249F51041B92ACC700B0CA61 /* public_key.x509.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +35,30 @@
 /* Begin PBXFileReference section */
 		249F50DA1B928E1100B0CA61 /* CocoaCryptoMac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CocoaCryptoMac; sourceTree = BUILT_PRODUCTS_DIR; };
 		249F50DD1B928E1100B0CA61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		249F50E41B92A52F00B0CA61 /* CCMPublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPublicKey.h; sourceTree = "<group>"; };
+		249F50E51B92A52F00B0CA61 /* CCMPublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPublicKey.m; sourceTree = "<group>"; };
+		249F50E71B92A53F00B0CA61 /* CCMPublicKey_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMPublicKey_internal.h; sourceTree = "<group>"; };
+		249F50E81B92A54E00B0CA61 /* CCMKeyLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMKeyLoader.h; sourceTree = "<group>"; };
+		249F50E91B92A54E00B0CA61 /* CCMKeyLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMKeyLoader.m; sourceTree = "<group>"; };
+		249F50EB1B92A68000B0CA61 /* CCMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMBase64.h; sourceTree = "<group>"; };
+		249F50EC1B92A68000B0CA61 /* CCMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBase64.m; sourceTree = "<group>"; };
+		249F50F31B92AB8D00B0CA61 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		249F50F61B92AB8D00B0CA61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		249F50FD1B92AC0100B0CA61 /* CCMKeyLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMKeyLoaderTests.m; sourceTree = "<group>"; };
+		249F51021B92ACC700B0CA61 /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
+		249F51031B92ACC700B0CA61 /* public_key.rsa.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key.rsa.pem; sourceTree = "<group>"; };
+		249F51041B92ACC700B0CA61 /* public_key.x509.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key.x509.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		249F50D71B928E1100B0CA61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		249F50F01B92AB8D00B0CA61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				249F50DD1B928E1100B0CA61 /* main.m */,
+				249F50EE1B92AB7500B0CA61 /* test */,
 				249F50DC1B928E1100B0CA61 /* CocoaCryptoMac */,
 				249F50DB1B928E1100B0CA61 /* Products */,
 			);
@@ -51,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				249F50DA1B928E1100B0CA61 /* CocoaCryptoMac */,
+				249F50F31B92AB8D00B0CA61 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +90,35 @@
 		249F50DC1B928E1100B0CA61 /* CocoaCryptoMac */ = {
 			isa = PBXGroup;
 			children = (
+				249F50E41B92A52F00B0CA61 /* CCMPublicKey.h */,
+				249F50E71B92A53F00B0CA61 /* CCMPublicKey_internal.h */,
+				249F50E51B92A52F00B0CA61 /* CCMPublicKey.m */,
+				249F50E81B92A54E00B0CA61 /* CCMKeyLoader.h */,
+				249F50E91B92A54E00B0CA61 /* CCMKeyLoader.m */,
+				249F50EB1B92A68000B0CA61 /* CCMBase64.h */,
+				249F50EC1B92A68000B0CA61 /* CCMBase64.m */,
 			);
 			path = CocoaCryptoMac;
+			sourceTree = "<group>";
+		};
+		249F50EE1B92AB7500B0CA61 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				249F50FC1B92ABBD00B0CA61 /* resources */,
+				249F50FD1B92AC0100B0CA61 /* CCMKeyLoaderTests.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		249F50FC1B92ABBD00B0CA61 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				249F50F61B92AB8D00B0CA61 /* Info.plist */,
+				249F51021B92ACC700B0CA61 /* private_key.pem */,
+				249F51031B92ACC700B0CA61 /* public_key.rsa.pem */,
+				249F51041B92ACC700B0CA61 /* public_key.x509.pem */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +141,23 @@
 			productReference = 249F50DA1B928E1100B0CA61 /* CocoaCryptoMac */;
 			productType = "com.apple.product-type.tool";
 		};
+		249F50F21B92AB8D00B0CA61 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 249F50F91B92AB8D00B0CA61 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				249F50EF1B92AB8D00B0CA61 /* Sources */,
+				249F50F01B92AB8D00B0CA61 /* Frameworks */,
+				249F50F11B92AB8D00B0CA61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 249F50F31B92AB8D00B0CA61 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +168,9 @@
 				ORGANIZATIONNAME = "Nik Youdale";
 				TargetAttributes = {
 					249F50D91B928E1100B0CA61 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					249F50F21B92AB8D00B0CA61 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -109,16 +188,44 @@
 			projectRoot = "";
 			targets = (
 				249F50D91B928E1100B0CA61 /* CocoaCryptoMac */,
+				249F50F21B92AB8D00B0CA61 /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		249F50F11B92AB8D00B0CA61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249F51051B92ACC700B0CA61 /* private_key.pem in Resources */,
+				249F51071B92ACC700B0CA61 /* public_key.x509.pem in Resources */,
+				249F51061B92ACC700B0CA61 /* public_key.rsa.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		249F50D61B928E1100B0CA61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249F50E61B92A52F00B0CA61 /* CCMPublicKey.m in Sources */,
+				249F50EA1B92A54E00B0CA61 /* CCMKeyLoader.m in Sources */,
+				249F50ED1B92A68000B0CA61 /* CCMBase64.m in Sources */,
 				249F50DE1B928E1100B0CA61 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		249F50EF1B92AB8D00B0CA61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249F51001B92AC2800B0CA61 /* CCMKeyLoader.m in Sources */,
+				249F50FE1B92AC0100B0CA61 /* CCMKeyLoaderTests.m in Sources */,
+				249F51011B92AC2800B0CA61 /* CCMBase64.m in Sources */,
+				249F50FF1B92AC2800B0CA61 /* CCMPublicKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +323,38 @@
 			};
 			name = Release;
 		};
+		249F50FA1B92AB8D00B0CA61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = test/resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		249F50FB1B92AB8D00B0CA61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = test/resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -233,6 +372,14 @@
 			buildConfigurations = (
 				249F50E21B928E1100B0CA61 /* Debug */,
 				249F50E31B928E1100B0CA61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		249F50F91B92AB8D00B0CA61 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				249F50FA1B92AB8D00B0CA61 /* Debug */,
+				249F50FB1B92AB8D00B0CA61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
