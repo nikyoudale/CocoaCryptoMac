@@ -59,7 +59,7 @@ C0+41I3wWnD2om68/HjaE3sfZHlp1nfsapJ2Y2X1954LJ1PxOoUvCb0CAwEAAQ==
 -----END PUBLIC KEY-----
 ```
 
-i.e. the header and footer are missing the words "RSA". These are just different encodings of the same public key. There's an excellent answer on stackoverflow talking about this: http://stackoverflow.com/a/29707204/692395
+i.e. the header and footer are missing the words "RSA". These are just different encodings of the same public key. There's an excellent answer on stackoverflow talking about this: http://stackoverflow.com/a/29707204/692395. More good info here: http://blog.oddbit.com/2011/05/08/converting-openssh-public-keys/.
 
 The first format is also known as PEM DER ASN.1 PKCS#1 RSA Public key
 
@@ -150,7 +150,7 @@ Decrypting with public key on the command line:
 
 It is this latter pair of operations that we want to replicate in a Mac app *without* OpenSSL.
 
-##Doing it in with Apple's APIs
+##Doing it with Apple's APIs
 ###Step 1: Load the key
 This is harder than it sounds. In summary, you need to use SecItemImport and pass NULL for the keychain parameter (this means don't store it a keychain, just load it in memory). The next complication is the value for the `SecExternalFormat` parameter. The correct value to use can only be determined by looking at the source code for `SecImportExportUtils.cpp`, which includes this handy table:
 
@@ -175,6 +175,7 @@ This is harder than it sounds. In summary, you need to use SecItemImport and pas
  * kSecFormatSSHv2        n/s     SSH2      n/s     SSH2      n/s     n/s
  */
 ```
+Source: http://www.opensource.apple.com/source/libsecurity_keychain/libsecurity_keychain-24850/lib/SecImportExportUtils.cpp?txt
 
 Essentially, what this means is that if your public key has the `-----BEGIN PUBLIC KEY-----` use `kSecFormatOpenSSL`, otherwise if the header is `-----BEGIN RSA PUBLIC KEY-----` then use `kSecFormatBSAFE`. I have no idea what BSAFE refers to.
 
@@ -191,3 +192,6 @@ NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8S
 ```
 
 So there you go. Pretty messy, but possible.
+
+##Credits
+This code was very helpful and forms the basis of `CSSMRSACryptor`: https://github.com/karstenBriksoft/CSSMPublicKeyDecrypt
